@@ -1,0 +1,14 @@
+{% extends 'style.html' %}
+{% block main_body %}
+<div class="container text-center">
+    <form method="GET">
+        Length of the password: <input type="text" name="pwd_length"><br>
+        Has UpperCase characters?: <input type="checkbox" name="uppercase"><br>
+        Has LowerCase characters?: <input type="checkbox" name="lowercase"><br>
+        Has Special characters?: <input type="checkbox" name="special_chars"><br>
+        Has Numbers characters?: <input type="checkbox" name="numbers"><br>
+        <input class="btn btn-primary" type="submit" name="get_password" value="GetPassword">
+    </form>
+</div>
+{{ password }}
+{% endblock main_body %}

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"> {% endcomment %}
+    {% comment %} <script src="{% static 'main.js' %}"> </script> {% endcomment %}
+    <title>{{title}}</title>
+</head>
+<body>
+    <div id = "nav-div">
+        <nav>
+            <a href="/">Home</a>
+            <a href="{% url 'pwd_generator' %}">Password Generator</a>
+            <a href="{% url 'about' %}">About</a>
+            {% comment %} {% if user.is_authenticated %}
+            <a href="/accounts/logout">Log Out</a>
+            <a style="margin-left:80%">Welcome <strong>{{user.first_name}}</strong></a>
+            {% else %}
+            <a href="/accounts/register">Register</a>
+            <a href="/accounts/login">Login</a>
+            {% endif %} {% endcomment %}
+        </nav>
+    </div>
+    <div id = content>
+    {% block main_body %}
+    {% endblock main_body %}
+    </div>
+</body>
+</html>

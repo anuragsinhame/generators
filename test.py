@@ -1,0 +1,3 @@
+length      =   int('')
+
+print(password)

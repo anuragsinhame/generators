@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from pwd_generator import views
 
 urlpatterns = [
+    path('',views.home),
+    path('pwd_generator/', views.pwd_generator, name="pwd_generator"),
+    path('about/', views.about, name="about"),
     path('admin/', admin.site.urls),
 ]
